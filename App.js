@@ -64,21 +64,21 @@ function App() {
 
   
   const DATA = [
-    { id: '1', value: 'Site 1'},
-    { id: '2', value: 'site 2'},
-    { id: '3', value: 'site 3'},
-    { id: '4', value: 'site 4'},
-    { id: '5', value: 'site 5'},
-    { id: '6', value: 'Site 6'},
-    { id: '7', value: 'site 7'},
-    { id: '8', value: 'site 8'},
-    { id: '9', value: 'site 9'},
-    { id: '10', value: 'site 10'},
-    { id: '11', value: 'Site 11'},
-    { id: '12', value: 'site 12'},
-    { id: '13', value: 'site 13'},
-    { id: '14', value: 'site 14'},
-    { id: '15', value: 'site 15'},
+    { id: '1', value: 'Website 1'},
+    { id: '2', value: 'Website 2'},
+    { id: '3', value: 'Website 3'},
+    { id: '4', value: 'Website 4'},
+    { id: '5', value: 'Website 5'},
+    { id: '6', value: 'Website 6'},
+    { id: '7', value: 'Website 7'},
+    { id: '8', value: 'Website 8'},
+    { id: '9', value: 'Website 9'},
+    { id: '10', value: 'Website 10'},
+    { id: '11', value: 'Website 11'},
+    { id: '12', value: 'Website 12'},
+    { id: '13', value: 'Website 13'},
+    { id: '14', value: 'Website 14'},
+    { id: '15', value: 'Website 15'},
   ];
 
   return (
@@ -92,12 +92,11 @@ function App() {
       <View style={styles.container}>
 
       <ScrollView >
-        <Text style={styles.sectionTitle}>Website Checker </Text>
           { <FlatList
             data={DATA}
             renderItem={({item})=>
             <View style={styles.item}>
-              <Text>{item.value}</Text>
+              <Text style={styles.value}>{item.value}</Text>
             </View>
             }
           />       
@@ -128,15 +127,21 @@ const styles = StyleSheet.create({
   },
   highlight: {
     fontWeight: '700', 
-  },
- 
-  item: {
+  },item: {
   borderBottomWidth:1,
   borderBottomColor:'#000',
-  marginBottom:10,
-  height:60
+  marginBottom:20,
+  height:40,
+  backgroundColor:'#5BC0EB',
+  borderRadius:5,
+},value:{
+  textAlign:'center',
+  alignItems:'center',
+  fontSize:20,
 },safeArea:{
-  flex:1
+  flex:1,
+  paddingRight: 30,
+  paddingLeft:30,
 },
 container: {
   flex:1
