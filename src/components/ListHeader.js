@@ -1,21 +1,21 @@
 import{React, useEffect, useState} from 'react';
-import{Button, Text,View, StyleSheet}from 'react-native';
+import{Text,View, StyleSheet}from 'react-native';
 import Clock from './Clock';
 
 function ListHeader(){
 
   const [time, setCurrentTime] = useState(new Date().toLocaleTimeString());
 
-  // useEffect(()=>{
+  useEffect(()=>{
 
-  //   const interval = setInterval( ()=>{
-  //     setCurrentTime(new Date().toLocaleDateString());
-  //   }, 1000);
+    const interval = setInterval( ()=>{
+    update();
+    }, 1000);
 
-  //   return () =>{
-  //     clearInterval(interval);
-  //   }
-  // })
+    return () =>{
+      clearInterval(interval);
+    }
+  }, )
 
   function update(){
     setCurrentTime(new Date().toLocaleTimeString());
@@ -29,9 +29,8 @@ function ListHeader(){
 
     <Clock time={time} style={styles.heure} />
     
-    <Button title='Actualiser' onPress={update} style={styles.button}></Button>
-
   </View>
+
   );
 };
 
